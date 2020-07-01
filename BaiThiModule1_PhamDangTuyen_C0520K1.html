@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra Module 1</title>
+</head>
+<body>
+    <h3>Bài 1:</h3>
+    <script>
+        function findMax(arr) {
+            let max = arr[0];
+            for (let i=0; i<arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        let a = [1,4,6,2,-7];
+        document.write(findMax(a));
+    </script>
+    <h3>Bài 2:</h3>
+    <script>
+        function tryRemoveFromArray(arr, x) {
+            let new_arr = [];
+            for (let i=0; i < arr.length; i++) {
+                if (arr[i] !== x) {
+                    new_arr[new_arr.length] = arr[i];
+                }
+            }
+            return new_arr;
+        }
+        let array = [1,2,3,4,5,3,2,1];
+        document.write(tryRemoveFromArray(array,4));
+    </script>
+    <h3>Bài 3:</h3>
+    <script>
+        function isFibonacci(x) {
+            let fibo_k1 = 1;
+            let fibo_k2 = 1;
+            let fibo_k = 0;
+            while (fibo_k < x) {
+                fibo_k = fibo_k1 + fibo_k2;
+                fibo_k1 = fibo_k2;
+                fibo_k2 = fibo_k;
+            }
+            return (fibo_k === x);
+        }
+        document.write(isFibonacci(34));
+    </script>
+    <h3>Bài 4:</h3>
+    <canvas id="myCanvas" width="1000" height="600"></canvas>
+    <script>
+        let canvas = document.getElementById('myCanvas');
+        let ctx = canvas.getContext('2d');
+        let Circle = function (x, y, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+            this.render = function () {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+        let circle = new Circle(10, 10, 100, '#000000');
+        circle.render();
+    </script>
+</body>
+</html>
