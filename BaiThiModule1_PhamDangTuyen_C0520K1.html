@@ -28,10 +28,11 @@
                     new_arr[new_arr.length] = arr[i];
                 }
             }
-            return new_arr;
+            arr = new_arr;
+            return arr;
         }
         let array = [1,2,3,4,5,3,2,1];
-        document.write(tryRemoveFromArray(array,4));
+        document.write(tryRemoveFromArray(array,3));
     </script>
     <h3>Bài 3:</h3>
     <script>
